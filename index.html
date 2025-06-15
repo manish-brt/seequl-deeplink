@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; URL=seequl://movie/123">
-  </head>
-  <body>
-    <p>Redirecting to Seequl app...</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Extract ?movieId=123 from URL
+    const params = new URLSearchParams(window.location.search);
+    const movieId = params.get('movieId');
+
+    // Construct deep link
+    const deeplink = movieId ? `seequl://movie/${movieId}` : 'seequl://';
+
+    // Redirect
+    window.location.replace(deeplink);
+  </script>
+</head>
+<body>
+  <p>Opening Seequl app...</p>
+</body>
 </html>
